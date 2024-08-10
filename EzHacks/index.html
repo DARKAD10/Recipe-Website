@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,107 +6,124 @@
     <title>Food Recipe Finder</title>
     <link rel="stylesheet" href="Style/styles.css">
     <script src="Script/script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      /* Styling for the recipe details popup */
+      .recipe-detail ul {
+            list-style-type: none; 
+            padding: 0;
+            margin: 0; 
+        }
+        .recipe-detail ul li{
+            margin-bottom: 8px;
+        }
+        .recipe-detail {
+            display: none;
+            position: fixed;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+            background-color: burlywood;
+            border-radius: 12px;
+            width: 40%;
+            height: 60%;
+            font-size: 20px;
+            overflow-y: scroll;
+            padding: 1rem;
+            z-index: 1000; /* Ensures it appears above other content */
+        }
+        .recipe-close {
+            background: transparent;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <ul>
-            <li><a class="active" href="#home">Home</a></li>
-            <li><a href="#news">News</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#about">About</a></li>
-        </ul>
+        <div class="nav-container">
+            <div class="logo">Food Recipe Finder</div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="#Resturant">News</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
     </header>
-
+   
     <div class="bg">
         <div class="background-picture">
-        <div class="search-container">
-            <input type="text" class="search-box" placeholder="Search..">
-            <br>
-            <button class="btn-hover color-8">Search</button>
+            <div class="search-container">
+                <input type="text" id="search-input" class="search-box" placeholder="Search..">
+                <br>
+                <button id="search-icon" class="btn-hover color-8">Search</button>
+            </div>
         </div>
     </div>
-    
-    </div>
+  <!-- this is about receie detail  -->
+  <div class="recipe-detail">
+    <button class="recipe-close">
+        <i class="fa fa-times"></i>
+    </button>
+    <div class="recipe-detail-container"></div>
+</div>
 
+<!-- ...  -->
 
-    <div class="card-container">
+    <div class="card-container"  id="result-container">
+      
         <div class="card">
-            <img src="/Photos/kheer.jpg" alt="card">
+            <img src="/Recipe-Website/EzHacks/Photos/kheer.jpg" alt="A bowl of kheer">
             <div class="card-content">
-
-                <h1>kheer</h1>
-                <p></p>
-                <span><button>View Details</button><button><a href="">tutorial</a></button></span>
+                <h1>Kheer</h1>
+                <span><button>View Details</button><button><a href="">Tutorial</a></button></span>
             </div>
         </div>
         <div class="card">
-            <img src="/Photos/dhido.jpg" alt="card">
+            <img src="/Recipe-Website/EzHacks/Photos/dhido.jpg" alt="A plate of dhido">
             <div class="card-content">
                 <h1>Dhido</h1>
-                <p></p>
-                <span><button>View Details</button><button><a href="">tutorial</a></button></span>
+                <span><button>View Details</button><button><a href="">Tutorial</a></button></span>
             </div>
         </div>
-
         <div class="card">
-            <img src="/Photos/rai-sukuti.jpg" alt="card">
+            <img src="/Recipe-Website/EzHacks/Photos/sekuwa.png" alt="A serving of sekuwa">
             <div class="card-content">
                 <h1>Sukuti</h1>
-                <p></p>
-                <span><button>View Details</button><button><a href="">tutorial</a></button></span>
+                <span><button>View Details</button><button><a href="">Tutorial</a></button></span>
             </div>
         </div>
-
         <div class="card">
-            <img src="/Photos/yomari.jpg" alt="card">
+            <img src="/Recipe-Website/EzHacks/Photos/yomari.jpg" alt="A plate of yomari">
             <div class="card-content">
-                <h1>yomari</h1>
-                <p></p>
-                <span><button>View Details</button><button><a href="">tutorial</a></button></span>
+                <h1>Yomari</h1>
+                <span><button>View Details</button><button><a href="">Tutorial</a></button></span>
             </div>
         </div>
-
         <div class="card">
-            <img src="/Photos/thariDhirki.jpg" alt="card">
+            <img src="/Recipe-Website/EzHacks/Photos/thariDhirki.jpg" alt="A serving of dhirki">
             <div class="card-content">
-
                 <h1>Dhirki</h1>
-                <p></p>
-                <span><button>View Details</button> <button><a href="">tutorial</a></button></span>
-
+                <span><button>View Details</button><button><a href="">Tutorial</a></button></span>
             </div>
         </div>
         <div class="card">
-            <img src="Photos/sekuwa.png" alt="card">
+            <img src="/Recipe-Website/EzHacks/Photos/sekuwa.png" alt="A serving of sekuwa">
             <div class="card-content">
-
                 <h1>Sekuwa</h1>
-                <p></p>
-                <span><button>View Details</button><button><a href="">tutorial</a></button></span>
+                <span><button>View Details</button><button><a href="">Tutorial</a></button></span>
             </div>
         </div>
     </div>
 </body>
-</html> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</html>
